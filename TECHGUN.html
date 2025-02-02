@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation on Double Click</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <style>
+        body {
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            height: 400px;
+            width: 300px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        #container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        #container i {
+            color:red;
+            font-size: 82px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/girl.jpg" alt="beautiful girl" />
+        <i class="ri-heart-3-fill"></i>
+    </div>
+    <script>
+        const container = document.getElementById("container");
+        const heartIcon = container.querySelector("i");
+
+        container.addEventListener("dblclick", function() {
+            heartIcon.style.transform = "translate(-50%, -50%) scale(1)";
+            heartIcon.style.opacity = "0.8";
+
+            setTimeout(function(){
+                heartIcon.style.transform = "translate(-50%, -50%) scale(0)";
+                heartIcon.style.opacity = "0";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
