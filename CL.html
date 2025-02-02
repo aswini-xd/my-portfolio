@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Request Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+        }
+        #card{
+            height: 400px;
+            width: 200px;
+            margin: 60px;
+            border-radius: 10px;
+            background-color: azure;
+        }
+        #card img{
+            height: 200px;
+            width: 200px;
+            padding: 15px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 30px;
+        }
+        #h2{
+            font-size: 20px;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        #h5{
+            font-size: 15px;
+            margin: 10px 20px;
+            text-align: center;
+            color: red;
+        }
+        #container #add{
+            padding: 12px 30px;
+            margin: 10px 20px;
+            background-color: lightgreen;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            font-weight: 700;
+            font-size: 15px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="card">
+        <img src="images/girl.jpg" alt="" id="card img">
+        <h2 id="h2">PAYAL PJ</h2>
+        <h5 id="h5">STRANGER</h5>
+        <div id="container">
+            <button id="add">ADD FRIEND</button>
+            
+        </div>
+        
+
+    </div>
+    <script>
+         let click=document.getElementById("h5");
+
+        let btn1=document.getElementById("add");
+       let f=0;
+
+        btn1.addEventListener("click",function(){
+           if(f==0){
+            click.innerHTML="fRIENDS"
+            click.style.color="green"
+            btn1.innerHTML="Remove"
+            f=1;
+            }
+            else{
+                click.innerHTML="STRANGER"
+            click.style.color="red";
+            btn1.innerHTML="Add"
+            f=0;
+            }
+            
+
+        });
+       
+    </script>
+</body>
+</html>
